@@ -1,5 +1,12 @@
 <li>
-    <img [src]=cocktail.strDrinkThumb width="100px" style="margin:5%;" /> {{ cocktail.idDrink }} - {{ cocktail.strDrink }} {{ cocktail.strCategory }}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" [src]=cocktail.strDrinkThumb alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ cocktail.idDrink }}</h5>
+            <p class="card-text">{{ cocktail.strDrink }}</p>
+            <p class="card-text">{{ cocktail.strCategory }}</p>
+            <ng-content></ng-content>
+        </div>
+    </div>
 
-    <ng-content></ng-content>
 </li>
