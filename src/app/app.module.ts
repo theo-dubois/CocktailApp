@@ -11,6 +11,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CocktailListComponent } from './cocktail-list/cocktail-list.component';
 import { CocktailComponent } from './cocktail/cocktail.component';
+import { CocktailPageComponent } from './cocktail-page/cocktail-page.component';
+import { CocktailInfosComponent } from './cocktail-infos/cocktail-infos.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CocktailComponent } from './cocktail/cocktail.component';
     HeaderComponent,
     FooterComponent,
     CocktailListComponent,
-    CocktailComponent
+    CocktailComponent,
+    CocktailPageComponent,
+    CocktailInfosComponent
   ],
   imports: [
     BrowserModule,
