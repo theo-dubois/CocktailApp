@@ -1,4 +1,5 @@
 <li>
-    {{ cocktail.idDrink }} - {{ cocktail.strDrink }} {{ cocktail.strCategory }} {{ cocktail.strDrinkThumb }}
+    <img [src]=cocktail.strDrinkThumb width="100px" style="margin:5%;" /> {{ cocktail.idDrink }} - {{ cocktail.strDrink }} {{ cocktail.strCategory }}
+
     <ng-content></ng-content>
 </li>
