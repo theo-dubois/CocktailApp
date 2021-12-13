@@ -1,12 +1,13 @@
 <li>
     <div class="card m-2 " style="width: 18rem;">
-        <div class="card-img rounded">
+        <div class="card-img rounded  photo">
             <img class="card-img rounded grayimage" [src]=cocktail.strDrinkThumb alt="Card image cap">
         </div>
         <div class="card-body text-center">
-            <h5 class="card-title center">{{ cocktail.strDrink }}</h5>
+            <h5 class="card-title center">{{ cocktail.strDrink | uppercase }}</h5>
             <p class="card-text">{{ cocktail.strCategory }}</p>
-            <p class="card-text">{{ cocktail.idDrink }}</p>
+            <h6>Ingredients</h6>
+            <p>{{ cocktail.strIngredient1 }},{{ cocktail.strIngredient2 }},{{ cocktail.strIngredient3 }},{{ cocktail.strIngredient4 }}</p>
             <ng-content></ng-content>
         </div>
     </div>

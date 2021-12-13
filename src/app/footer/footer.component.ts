@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  myLogoBlanc!: string;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.myLogoBlanc = 'assets/images/cocktailiconeblanc.png';
   }
 
 }
+

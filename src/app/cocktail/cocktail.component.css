@@ -2,29 +2,41 @@ li {
     list-style-type: none;
 }
 
-.container {
+.photo {
     display: inline-block;
     overflow: hidden;
     /* clip the excess when child gets bigger than parent */
 }
 
-.container img {
+.photo img {
     display: block;
     transition: transform .4s;
     overflow: hidden;
     /* smoother zoom */
 }
 
-.container:hover img {
-    transform: scale(1.3);
+.photo:hover img {
+    transform: scale(1.1);
     transform-origin: 50% 50%;
     overflow: hidden;
 }
 
 .grayimage {
-    filter: grayscale(10%);
+    filter: grayscale(0%);
 }
 
 .grayimage:hover {
-    filter: grayscale(100%);
+    filter: grayscale(60%);
 }
+.centered {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .photo2:hover + .centered {
+      display:block;
+      color: white;
+      font-size: large;
+  }

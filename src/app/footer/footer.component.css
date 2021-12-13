@@ -1,3 +1,15 @@
 div {
-    background-color: #303030;
+
 }
+.footer {
+    background-color: #242424;
+    color: white;
+}
+ .footerelement {
+     padding-top: 20px;
+ }
+ .sousfooter{
+    background-color: #1a1a1a;
+    color: white;
+    padding: 1%;
+ }
