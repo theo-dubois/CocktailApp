@@ -20,3 +20,11 @@ li {
     transform-origin: 50% 50%;
     overflow: hidden;
 }
+
+.grayimage {
+    filter: grayscale(10%);
+}
+
+.grayimage:hover {
+    filter: grayscale(100%);
+}

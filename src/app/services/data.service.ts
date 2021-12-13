@@ -17,9 +17,9 @@ export class DataService {
         map( (data: any) => data.drinks )
       );
 }
-getContact(id :any): Observable<Cocktail> {
-  return this.http.get<Cocktail>('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='+id)
-    .pipe(
+  getContact(id :any): Observable<Array<Cocktail>> {
+     return this.http.get<Array<Cocktail>>('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='+id)
+      .pipe(
       map( (data: any) => data.drinks )
     );
 }
