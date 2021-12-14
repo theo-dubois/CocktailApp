@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Cocktail } from '../classes/cocktail';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,10 @@ export class DataService {
       .pipe(
       map( (data: any) => data.drinks )
     );
+}
+searchCocktails(query: string): Observable<Array<Cocktail>> {
+  return this.http.get<Array<Cocktail>>('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + query)
+  .pipe(
+      map( (data: any) =>data.drinks ));
 }
 }

@@ -1,7 +1,5 @@
-
-<br>
-
 <div class="search">
+    
     <form [formGroup]="searchForm" class="form-inline input-group justify-content-center">
         <mat-form-field>
         <input matInput formControlName="search" class="inputsearch" placeholder="Rechercher un cocktail, ingredient ou alcool">
@@ -10,14 +8,7 @@
         </svg></button>
     </mat-form-field>
     </form>
-</div>
-
-<br><br>
-<div class="card-group ">
-    <ng-container *ngIf="cocktails !== null">
-        <div *ngFor="let cocktail of cocktails">
-            <app-cocktail [cocktail]='cocktail'></app-cocktail>
-        </div>
-        <br>
+    <ng-container *ngFor="let prop of propositions">
+        {{ prop }}<br/>
     </ng-container>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { debounceTime, mergeMap } from 'rxjs/operators';
 import { Cocktail } from '../classes/cocktail';
 import { DataService } from '../services/data.service';
 
@@ -12,10 +14,16 @@ export class CocktailListComponent implements OnInit {
 
   cocktails!: Array<Cocktail>;
   subscription! : Subscription;
+  searchForm!: FormGroup;
+  searchControl!: FormControl;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.searchControl = new FormControl('');
+      this.searchForm = new FormGroup({
+          search: this.searchControl
+      });
 
     this.subscription = this.dataService.getContacts().subscribe(
 
@@ -25,6 +33,14 @@ export class CocktailListComponent implements OnInit {
                 this.cocktails = data;
             }
     );
+    this.searchControl.valueChanges.pipe(
+      debounceTime(1000),
+      mergeMap( data => this.dataService.searchCocktails(data))
+  ).subscribe(
+      (data: Array<Cocktail>) => {
+              this.cocktails = data
+      }
+  )
 }
 
 }
