@@ -34,7 +34,7 @@ export class CocktailListComponent implements OnInit {
             }
     );
     this.searchControl.valueChanges.pipe(
-      debounceTime(1000),
+      debounceTime(100),
       mergeMap( data => this.dataService.searchCocktails(data))
   ).subscribe(
       (data: Array<Cocktail>) => {

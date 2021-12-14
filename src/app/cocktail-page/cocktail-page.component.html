@@ -1,1 +1,12 @@
 <app-cocktail-infos [cocktail]='cocktail'></app-cocktail-infos>
+<div class="card m-2" style="width: 18rem;">
+    <div class="card-img rounded container">
+        <img class="card-img rounded " [src]=cocktail.strDrinkThumb alt="Card image cap">
+    </div>
+    <div class="card-body text-center">
+        <h5 class="card-title center">{{ cocktail.strDrink }}</h5>
+        <p class="card-text">{{ cocktail.strCategory }}</p>
+        <p class="card-text">{{ cocktail.idDrink }}</p>
+        <ng-content></ng-content>
+    </div>
+</div>
