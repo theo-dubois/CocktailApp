@@ -6,7 +6,7 @@ import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
     { path: '', component: IndexComponent },
-    { path: 'cocktail', component: CocktailPageComponent }
+    { path: 'cocktail/:id', component: CocktailPageComponent }
 ];
 
 @NgModule({
