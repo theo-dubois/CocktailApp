@@ -1,20 +1,72 @@
-<div class="text-center banner justify-content-center">
-    <div class="">
-        <img class="" [src]=cocktail.strDrinkThumb alt="Card image cap" >
+
+<br>
+<div class=" container">
+    <div class="text-center banner justify-content-center">
+        <div class="">
+            <img class="imagee" [src]=cocktail.strDrinkThumb alt="Card image cap" >
+        </div>
     </div>
-</div>
-<div class="d-flex justify-content-center">
+
+    <br><br><br>
+    <div class="text-center">
+
+    </div>
+
     <div class="row">
-     <div class="col">
-      1 of 2
+     <div class="col text-center left">
+      <h2>Ingredients</h2>
+      <br>
+      <div class="row ">
+        <div class="card m-2 jus" style="width: 15rem;">
+            <div class="card-img rounded  photo"> 
+                <img class="" src="https://www.thecocktaildb.com/images/ingredients/{{cocktail.strIngredient1}}-small.png" alt="Card image cap" >
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title center">{{cocktail.strIngredient1}}</h5>
+            </div>
+        </div>
+        <div class="card m-2 " style="width: 15rem;">
+            <div class="card-img rounded  photo"> 
+                <img class="" src="https://www.thecocktaildb.com/images/ingredients/{{cocktail.strIngredient2}}-small.png" alt="Card image cap" >
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title center">{{cocktail.strIngredient2}}</h5>
+            </div>
+        </div>
+        <div class="card m-2 " style="width: 15rem;">
+            <div class="card-img rounded  photo"> 
+                <img class="" src="https://www.thecocktaildb.com/images/ingredients/{{cocktail.strIngredient3}}-small.png" alt="Card image cap" >
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title center">{{cocktail.strIngredient3}}</h5>
+            </div>
+        </div>>
+      </div>
      </div>
-     <div class="col">
-      2 of 2
+     <div class="col ">
+        <h2 class="text-center">Preparation</h2>
+<br>
+            <li class="item">
+                <span class="dot">1</span>
+               Start by taking a {{cocktail.strGlass}}.
+
+            </li>
+            <li class="item">
+                <span class="dot">2</span>
+                {{cocktail.strInstructions}}
+             
+            </li>
+            <li class="item">
+                <span class="dot">3</span>
+                Degust and appreciate your drink !
+              
+            </li>
      </div>
   </div>
 </div>
+<br><br>
 
     <div class="hero-text">
-        <h2 class="card-title center">How to make the drink "{{ cocktail.strDrink | uppercase }}"</h2>
-        <p class="card-text">Category : {{ cocktail.strCategory }}</p>
+        <h1 class="card-title center">How to make the drink "{{ cocktail.strDrink | uppercase }}"</h1>
+        <h3>Category : {{ cocktail.strCategory }}</h3>
     </div>
