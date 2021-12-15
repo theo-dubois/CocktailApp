@@ -10,7 +10,7 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./cocktail-page.component.css']
 })
 export class CocktailPageComponent implements OnInit {
-  cocktail!:Cocktail;
+  cocktail!:Array<Cocktail>;
   subscription !:Subscription;
   id!: string;
 

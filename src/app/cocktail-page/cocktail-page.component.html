@@ -1,12 +1,7 @@
-<app-cocktail-infos [cocktail]='cocktail'></app-cocktail-infos>
-<div class="card m-2" style="width: 18rem;">
-    <div class="card-img rounded container">
-        <img class="card-img rounded " [src]=cocktail.strDrinkThumb alt="Card image cap">
+
+<ng-container *ngIf="cocktail !== null">
+    <div *ngFor="let cocktail2 of cocktail">
+        <app-cocktail-infos [id]="id" [cocktail]='cocktail2'></app-cocktail-infos>
     </div>
-    <div class="card-body text-center">
-        <h5 class="card-title center">{{ cocktail.strDrink }}</h5>
-        <p class="card-text">{{ cocktail.strCategory }}</p>
-        <p class="card-text">{{ cocktail.idDrink }}</p>
-        <ng-content></ng-content>
-    </div>
-</div>
+    <br>
+</ng-container>
