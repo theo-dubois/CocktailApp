@@ -12,8 +12,10 @@ export class Cocktail {
   strGlass: string;
   strInstructions : string;
   strMeasure1: string;
+  strMeasure2: string;
+  strMeasure3: string;
 
-  constructor(strMeasure1: string, strInstructions : string,idDrink: number, strDrink: string, strCategory: string, strAlcoholic: string, strDrinkThumb: string,strIngredient1: string,strIngredient2: string, strIngredient3: string,  strIngredient4: string,strGlass: string) {
+  constructor(strMeasure3: string,strMeasure2: string,strMeasure1: string, strInstructions : string,idDrink: number, strDrink: string, strCategory: string, strAlcoholic: string, strDrinkThumb: string,strIngredient1: string,strIngredient2: string, strIngredient3: string,  strIngredient4: string,strGlass: string) {
 
       this.idDrink = idDrink;
       this.strDrink = strDrink;
@@ -27,5 +29,7 @@ export class Cocktail {
       this.strGlass = strGlass;
       this.strInstructions = strInstructions;
       this.strMeasure1 = strMeasure1;
+      this.strMeasure2 = strMeasure2;
+      this.strMeasure3 = strMeasure3;
   }
 }
