@@ -14,6 +14,7 @@ export class CocktailInfosComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.id);
+    
 }
 
 }

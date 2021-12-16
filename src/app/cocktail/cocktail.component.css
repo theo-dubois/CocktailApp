@@ -15,22 +15,25 @@ li {
     /* smoother zoom */
 }
 
-.photo:hover img {
+.ombre:hover img {
     transform: scale(1.1);
     transform-origin: 50% 50%;
     overflow: hidden;
-}
-
-.grayimage {
-    filter: grayscale(0%);
-}
-
-.grayimage:hover {
-    filter: grayscale(60%);
+    filter: blur(2px);
 }
 
 .label-danger {
-    color: white;
-    background-color: #303030;
+    color: rgb(31, 31, 31);
+    background-color: #ffffff;
     border-radius: 20px;
+    padding: 5px;
+
+
+
+}
+.ombre:hover{
+    box-shadow: 2px 2px 5px  rgb(73, 73, 73);
+}
+.ombre{
+    color: #303030;
 }

@@ -3,24 +3,36 @@
 
 
 
-        <div class="card m-2 " style="width: 15rem;">
+        <div class=" m-2 ombre" style="width: 15rem;">
 
-            <div class="card-img rounded  photo">
-                <img class="card-img rounded grayimage" [src]=cocktail.strDrinkThumb alt="Card image cap">
+            <div class="photo">
+                <img class="card-img  grayimage" [src]=cocktail.strDrinkThumb alt="Card image cap">
             </div>
 
             <div class="card-body text-center">
-                <h5 class="card-title center">{{ cocktail.strDrink | uppercase }}</h5>
+                <h3 class="card-title center">{{ cocktail.strDrink | uppercase }}</h3>
                 <p class="card-text">{{ cocktail.strCategory }}</p>
-                <span class="label label-danger">{{ cocktail.strAlcoholic }}</span>
-                <h6>Ingredients</h6>
-                <p>{{ cocktail.strIngredient1 }}, {{ cocktail.strIngredient2 }}, {{ cocktail.strIngredient3 }}
-                    <ng-container *ngIf="cocktail.strIngredient4 !== null">
-                        , {{ cocktail.strIngredient4 }}
-                    </ng-container>
+                <div class="label label-danger">{{ cocktail.strAlcoholic }}</div>
+                <br>
+                <h6>
+                <ng-container *ngIf="cocktail.strIngredient1 !== null">
+                    {{ cocktail.strIngredient1 }}
+                </ng-container>
+                <ng-container *ngIf="cocktail.strIngredient2 !== null">
+                    , {{ cocktail.strIngredient2 }}
+                </ng-container>
+                <ng-container *ngIf="cocktail.strIngredient3 !== null">
+                    , {{ cocktail.strIngredient3 }}
+                </ng-container>
+                <ng-container *ngIf="cocktail.strIngredient4 !== null">
+                    , {{ cocktail.strIngredient4 }}
+                </ng-container>
                     <ng-container *ngIf="cocktail.strIngredient5 !== null">
                         , {{ cocktail.strIngredient5 }}
                     </ng-container>
+                    <ng-container *ngIf="cocktail.strIngredient6 !== null">
+                        , {{ cocktail.strIngredient6 }}
+                    </ng-container></h6>
             </div>
         </div>
     </a>
