@@ -28,3 +28,9 @@ li {
 .grayimage:hover {
     filter: grayscale(60%);
 }
+
+.label-danger {
+    color: white;
+    background-color: #303030;
+    border-radius: 20px;
+}

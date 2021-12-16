@@ -20,6 +20,7 @@ import { CocktailComponent } from './cocktail/cocktail.component';
 import { CocktailPageComponent } from './cocktail-page/cocktail-page.component';
 import { CocktailInfosComponent } from './cocktail-infos/cocktail-infos.component';
 import { SearchComponent } from './search/search.component';
+import { IngredientComponent } from './ingredient/ingredient.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SearchComponent } from './search/search.component';
     CocktailComponent,
     CocktailPageComponent,
     CocktailInfosComponent,
-    SearchComponent
+    SearchComponent,
+    IngredientComponent
   ],
   imports: [
     BrowserModule,
