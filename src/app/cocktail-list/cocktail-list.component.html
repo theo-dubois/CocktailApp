@@ -7,8 +7,8 @@
         </div>
           <div class="filtre d-flex justify-content-center">
             <div class="form-check form-switch">
-              <label class="form-check-label" for="flexSwitchCheckChecked">Alcoholic</label>
-              <input class="form-check-input pull-right" type="checkbox" [checked]="checked" id="flexSwitchCheckChecked" checked>
+              <label class="form-check-label" for="flexSwitchCheckChecked">With alcool</label>
+              <input class="form-check-input pull-right" type="checkbox" formControlName="checked" id="flexSwitchCheckChecked" checked >
             </div>
           </div>
     </form>
@@ -18,8 +18,11 @@
 <div class="">
     <div class="card-group" *ngIf="cocktails !== null">
         <div class="" *ngFor="let cocktail of cocktails">
-            <app-cocktail [cocktail]='cocktail'></app-cocktail>
-        </div>
+          <div >
+            <div *ngIf="cocktail.strAlcoholic=='Alcoholic' || cocktail.strAlcoholic=='Optional alcohol'">
+              <app-cocktail [cocktail]='cocktail'></app-cocktail>
+          </div>
+          </div>
       </div>
 </div>
 

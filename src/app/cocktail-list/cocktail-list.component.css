@@ -4,6 +4,7 @@
 .inputsearch {
     border-radius: 50px;
     width: 40%;
+    padding: 5px;
     background-color: #f0f0f0;
     color: black;
     border-style: solid;
@@ -18,4 +19,3 @@
     color: #303030;
     margin: 10px;
 }
-    

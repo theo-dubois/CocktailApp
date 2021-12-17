@@ -12,6 +12,8 @@ export class CocktailComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    if(this.cocktail.strAlcoholic=='Alcoholic'){
+    }
   }
   open(id:any):void{
     this.router.navigate(['/cocktail/', id]);

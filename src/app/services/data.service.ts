@@ -12,8 +12,8 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getCocktails(): Observable<Array<Cocktail>> {
-    return this.http.get<Array<Cocktail>>('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
+  getCocktailsAlc(): Observable<Array<Cocktail>> {
+    return this.http.get<Array<Cocktail>>('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic')
       .pipe(
         map( (data: any) => data.drinks )
       );
