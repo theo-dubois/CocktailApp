@@ -2,8 +2,8 @@
     color:rgb(255, 255, 255);
 }
 .inputsearch {
-    width: 30%;
     border-radius: 50px;
+    width: 40%;
     background-color: #f0f0f0;
     color: black;
     border-style: solid;
@@ -14,3 +14,8 @@
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+.filtre{
+    color: #303030;
+    margin: 10px;
+}
+    
