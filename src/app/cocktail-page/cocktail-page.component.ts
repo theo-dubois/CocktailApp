@@ -23,7 +23,7 @@ export class CocktailPageComponent implements OnInit {
       this.id = paramsId.id;
       console.log(this.id);
     });
-    this.subscription = this.dataService.getContact(this.id).subscribe(
+    this.subscription = this.dataService.getCocktail(this.id).subscribe(
       (data: any) =>
           {
             console.log(data);

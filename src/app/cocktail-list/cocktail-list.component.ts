@@ -16,7 +16,7 @@ export class CocktailListComponent implements OnInit {
   subscription! : Subscription;
   searchForm!: FormGroup;
   searchControl!: FormControl;
-  check: boolean =true;
+  checked: boolean =true;
 
   constructor(private dataService: DataService) { }
 
@@ -26,6 +26,14 @@ export class CocktailListComponent implements OnInit {
           search: this.searchControl
       });
 
+    this.subscription = this.dataService.searchCocktails('').subscribe(
+
+        (data: any) =>
+            {
+              console.log(data);
+                this.cocktails = data;
+            }
+    );
     this.searchControl.valueChanges.pipe(
       debounceTime(100),
       mergeMap( data => this.dataService.searchCocktails(data))
