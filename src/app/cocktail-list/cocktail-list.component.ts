@@ -41,20 +41,18 @@ export class CocktailListComponent implements OnInit {
       mergeMap( data => this.dataService.searchCocktails(data))
   ).subscribe(
       (data: Array<Cocktail>) => {
-              this.cocktails = data
+              this.cocktails = data;
+              if(this.checked!==true){
+                for (let i = 0; i < this.cocktails.length; i++) {
+                  if((this.cocktails[i].strAlcoholic='Alcoholic') || ( this.cocktails[i].strAlcoholic='Optional alcohol' )){
+                    delete this.cocktails[i];
+                  }
+                }
+              }
       }
   )
 }
 onChange(checked: boolean) {
-  console.log(checked)
-  this.subscription = this.dataService.searchCocktails('').subscribe(
-
-    (data: any) =>
-        {
-          console.log(data);
-            this.cocktails = data;
+  console.log(checked);
         }
-
-);
-}
-}
+      }
