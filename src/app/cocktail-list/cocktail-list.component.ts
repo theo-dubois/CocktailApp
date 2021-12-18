@@ -16,12 +16,12 @@ export class CocktailListComponent implements OnInit {
   subscription! : Subscription;
   searchForm!: FormGroup;
   searchControl!: FormControl;
-  checked!: boolean;
+  public checked: boolean=true;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    
+    console.log(this.checked);
     this.searchControl = new FormControl('');
       this.searchForm = new FormGroup({
           search: this.searchControl
@@ -34,16 +34,27 @@ export class CocktailListComponent implements OnInit {
               console.log(data);
                 this.cocktails = data;
             }
-            
+
     );
     this.searchControl.valueChanges.pipe(
       debounceTime(100),
       mergeMap( data => this.dataService.searchCocktails(data))
   ).subscribe(
       (data: Array<Cocktail>) => {
-              this.cocktails = data     
+              this.cocktails = data
       }
   )
 }
+onChange(checked: boolean) {
+  console.log(checked)
+  this.subscription = this.dataService.searchCocktails('').subscribe(
 
+    (data: any) =>
+        {
+          console.log(data);
+            this.cocktails = data;
+        }
+
+);
+}
 }

@@ -1,7 +1,4 @@
-
 <ng-container *ngIf="cocktail !== null">
-    <div *ngFor="let cocktail2 of cocktail">
-        <app-cocktail-infos [id]="id" [cocktail]='cocktail2'></app-cocktail-infos>
-    </div>
+    <app-cocktail-infos [id]="id" [cocktail]='cocktail'></app-cocktail-infos>
     <br>
 </ng-container>
