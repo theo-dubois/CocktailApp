@@ -15,24 +15,25 @@
                 <div class="label label-danger">{{ cocktail.strAlcoholic }}</div>
                 <br>
                 <h6>
-                <ng-container *ngIf="cocktail.strIngredient1 !== null">
-                    {{ cocktail.strIngredient1 }}
-                </ng-container>
-                <ng-container *ngIf="cocktail.strIngredient2 !== null">
-                    , {{ cocktail.strIngredient2 }}
-                </ng-container>
-                <ng-container *ngIf="cocktail.strIngredient3 !== null">
-                    , {{ cocktail.strIngredient3 }}
-                </ng-container>
-                <ng-container *ngIf="cocktail.strIngredient4 !== null">
-                    , {{ cocktail.strIngredient4 }}
-                </ng-container>
+                    <ng-container *ngIf="cocktail.strIngredient1 !== null">
+                        {{ cocktail.strIngredient1 }}
+                    </ng-container>
+                    <ng-container *ngIf="cocktail.strIngredient2 !== null">
+                        , {{ cocktail.strIngredient2 }}
+                    </ng-container>
+                    <ng-container *ngIf="cocktail.strIngredient3 !== null">
+                        , {{ cocktail.strIngredient3 }}
+                    </ng-container>
+                    <ng-container *ngIf="cocktail.strIngredient4 !== null">
+                        , {{ cocktail.strIngredient4 }}
+                    </ng-container>
                     <ng-container *ngIf="cocktail.strIngredient5 !== null">
                         , {{ cocktail.strIngredient5 }}
                     </ng-container>
                     <ng-container *ngIf="cocktail.strIngredient6 !== null">
                         , {{ cocktail.strIngredient6 }}
-                    </ng-container></h6>
+                    </ng-container>
+                </h6>
             </div>
         </div>
     </a>

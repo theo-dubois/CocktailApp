@@ -13,6 +13,7 @@ import { DataService } from '../services/data.service';
 export class CocktailListComponent implements OnInit {
 
   cocktails!: Array<Cocktail>;
+  cocktailsFiltered!: Array<Cocktail>;
   subscription! : Subscription;
   searchForm!: FormGroup;
   searchControl!: FormControl;
@@ -41,18 +42,24 @@ export class CocktailListComponent implements OnInit {
       mergeMap( data => this.dataService.searchCocktails(data))
   ).subscribe(
       (data: Array<Cocktail>) => {
-              this.cocktails = data;
-              if(this.checked!==true){
+        if(this.checked){
+          this.cocktails = data.filter(p => p.strAlcoholic=='Alcoholic' || p.strAlcoholic=='Optional alcohol');
+        }else{
+          this.cocktails = data.filter(p => p.strAlcoholic=='Non alcoholic' || p.strAlcoholic=='Optional alcohol');
+        }
+
+              /* if(this.checked!==true){
                 for (let i = 0; i < this.cocktails.length; i++) {
                   if((this.cocktails[i].strAlcoholic='Alcoholic') || ( this.cocktails[i].strAlcoholic='Optional alcohol' )){
                     delete this.cocktails[i];
                   }
                 }
-              }
+              }*/
       }
   )
 }
 onChange(checked: boolean) {
   console.log(checked);
+
         }
       }
