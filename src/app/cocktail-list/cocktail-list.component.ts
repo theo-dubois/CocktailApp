@@ -42,12 +42,7 @@ export class CocktailListComponent implements OnInit {
       mergeMap( data => this.dataService.searchCocktails(data))
   ).subscribe(
       (data: Array<Cocktail>) => {
-        if(this.checked){
-          this.cocktails = data.filter(p => p.strAlcoholic=='Alcoholic' || p.strAlcoholic=='Optional alcohol');
-        }else{
-          this.cocktails = data.filter(p => p.strAlcoholic=='Non alcoholic' || p.strAlcoholic=='Optional alcohol');
-        }
-
+          this.cocktails = data;
               /* if(this.checked!==true){
                 for (let i = 0; i < this.cocktails.length; i++) {
                   if((this.cocktails[i].strAlcoholic='Alcoholic') || ( this.cocktails[i].strAlcoholic='Optional alcohol' )){
@@ -60,6 +55,11 @@ export class CocktailListComponent implements OnInit {
 }
 onChange(checked: boolean) {
   console.log(checked);
+  if(this.checked){
+    this.cocktails = this.cocktails.filter(p => p.strAlcoholic=='Alcoholic' || p.strAlcoholic=='Optional alcohol');
+  }else{
+    this.cocktails = this.cocktails.filter(p => p.strAlcoholic=='Non alcoholic' || p.strAlcoholic=='Optional alcohol');
+  }
 
         }
       }
