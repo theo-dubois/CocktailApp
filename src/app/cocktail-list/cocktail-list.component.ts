@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { debounceTime, mergeMap } from 'rxjs/operators';
@@ -12,12 +12,12 @@ import { DataService } from '../services/data.service';
 })
 export class CocktailListComponent implements OnInit {
 
+  public checked: boolean=true;
   cocktails!: Array<Cocktail>;
   cocktailsFiltered!: Array<Cocktail>;
   subscription! : Subscription;
   searchForm!: FormGroup;
   searchControl!: FormControl;
-  public checked: boolean=true;
 
   constructor(private dataService: DataService) { }
 
@@ -43,13 +43,6 @@ export class CocktailListComponent implements OnInit {
   ).subscribe(
       (data: Array<Cocktail>) => {
           this.cocktails = data;
-              /* if(this.checked!==true){
-                for (let i = 0; i < this.cocktails.length; i++) {
-                  if((this.cocktails[i].strAlcoholic='Alcoholic') || ( this.cocktails[i].strAlcoholic='Optional alcohol' )){
-                    delete this.cocktails[i];
-                  }
-                }
-              }*/
       }
   )
 }

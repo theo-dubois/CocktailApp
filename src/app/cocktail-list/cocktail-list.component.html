@@ -16,9 +16,9 @@
 <br>
 
 <div class="">
-    <div class="card-group" *ngIf="cocktails !== null">
+    <div class="card-group justify-content-center" *ngIf="cocktails !== null">
         <div class="" *ngFor="let cocktail of cocktails">
-            <div *ngIf="checked==true">
+            <div class="" *ngIf="checked==true">
                 <div *ngIf="cocktail.strAlcoholic=='Alcoholic' || cocktail.strAlcoholic=='Optional alcohol'">
                     <app-cocktail [cocktail]='cocktail'></app-cocktail>
                 </div>
