@@ -21,6 +21,7 @@ import { CocktailPageComponent } from './cocktail-page/cocktail-page.component';
 import { CocktailInfosComponent } from './cocktail-infos/cocktail-infos.component';
 import { SearchComponent } from './search/search.component';
 import { IngredientComponent } from './ingredient/ingredient.component';
+import { RandompageComponent } from './randompage/randompage.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { IngredientComponent } from './ingredient/ingredient.component';
     CocktailPageComponent,
     CocktailInfosComponent,
     SearchComponent,
-    IngredientComponent
+    IngredientComponent,
+    RandompageComponent
   ],
   imports: [
     BrowserModule,
