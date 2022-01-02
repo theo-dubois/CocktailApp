@@ -1,6 +1,7 @@
 .search {
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
+
 .inputsearch {
     border-radius: 50px;
     width: 40%;
@@ -10,12 +11,27 @@
     border-style: solid;
     border-width: 2px;
     border-color: #303030;
+    text-align: center;
 }
-.btn{
+
+.btn {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-.filtre{
+
+.filtre {
     color: #303030;
     margin: 10px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* Styles pour cette Media Queries */
+    [class*="col-"] {
+        width: 100%;
+    }
+    .card-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }

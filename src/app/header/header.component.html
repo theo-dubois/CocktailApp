@@ -1,11 +1,17 @@
-<nav class="navbar navbar-light bg-transparent justify-content-center">
+<div class="text-center">
     <a routerLink="/" class="navbar-brand">
         <img [src]="myLogo" width="400px" /></a>
-
-    <!--- <a routerLink="/cocktail">COCKTAIL</a> -->
-
-
-</nav>
-
-
+</div>
 <br>
+<nav class="navbar justify-content-center">
+    <!--- <a routerLink="/cocktail">COCKTAIL</a> -->
+    <a routerlink="/category" class="nav-item nav-link">
+        Categories
+    </a>
+    <a routerlink="/ingredient" class="nav-item nav-link">
+      Ingredients
+  </a>
+    <a routerlink="/random" class="nav-item nav-link">
+      Random Cocktail
+</a>
+</nav>

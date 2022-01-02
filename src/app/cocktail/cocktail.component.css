@@ -15,7 +15,7 @@ li {
     /* smoother zoom */
 }
 
-.ombre:hover img {
+.card:hover img {
     transform: scale(1.1);
     transform-origin: 50% 50%;
     overflow: hidden;
@@ -27,13 +27,20 @@ li {
     background-color: #ffffff;
     border-radius: 20px;
     padding: 5px;
-
-
-
 }
-.ombre:hover{
-    box-shadow: 2px 2px 5px  rgb(73, 73, 73);
+
+.card:hover {
+    box-shadow: 2px 2px 5px rgb(73, 73, 73);
 }
-.ombre{
-    color: #303030;
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* Styles pour cette Media Queries */
+    [class*="col-"] {
+        width: 100%;
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }

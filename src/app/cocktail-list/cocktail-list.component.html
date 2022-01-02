@@ -3,35 +3,30 @@
 <div class="search container text-center">
     <form [formGroup]="searchForm" class="justify-content-center">
         <div>
-            <input formControlName="search" class="inputsearch" placeholder="Rechercher un cocktail, ingredient ou alcool">
+            <input formControlName="search" class="inputsearch" placeholder="Search a cocktail by name">
         </div>
         <div class="filtre d-flex justify-content-center">
             <div class="form-check form-switch">
-                <label class="form-check-label" for="flexSwitchCheckChecked">With alcool</label>
+                <label class="form-check-label" for="flexSwitchCheckChecked">{{ alclabel }}</label>
                 <input class="form-check-input pull-right" type="checkbox" #checkbox (change)="onChange(checkbox.checked)" id="flexSwitchCheckChecked" checked>
             </div>
         </div>
     </form>
 </div>
 <br>
-
 <div class="">
     <div class="card-group justify-content-center" *ngIf="cocktails !== null">
-        <div class="" *ngFor="let cocktail of cocktails">
-            <div class="" *ngIf="checked==true">
-                <div *ngIf="cocktail.strAlcoholic=='Alcoholic' || cocktail.strAlcoholic=='Optional alcohol'">
-                    <app-cocktail [cocktail]='cocktail'></app-cocktail>
-                </div>
-            </div>
-            <div *ngIf="checked==false">
-                <div *ngIf="cocktail.strAlcoholic=='Non alcoholic' || cocktail.strAlcoholic=='Optional alcohol'">
-                    <app-cocktail [cocktail]='cocktail'></app-cocktail>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div *ngIf="cocktails==null" class="text-center">
-        <h1>No result !</h1>
-        <br>
+        <div class="" *ngFor="let cocktail of cocktails">
+            <app-cocktail [cocktail]='cocktail'></app-cocktail>
+        </div>
+
+
     </div>
+</div>
+
+
+<div *ngIf="cocktails==null" class="text-center">
+    <h1>No result !</h1>
+    <br>
+</div>

@@ -18,10 +18,16 @@ export class CocktailListComponent implements OnInit {
   subscription! : Subscription;
   searchForm!: FormGroup;
   searchControl!: FormControl;
+  alclabel!: string;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    if(this.checked){
+      this.alclabel ='With alcohol'
+    }else{
+      this.alclabel ='Without alcohol'
+    }
     console.log(this.checked);
     this.searchControl = new FormControl('');
       this.searchForm = new FormGroup({
@@ -42,17 +48,21 @@ export class CocktailListComponent implements OnInit {
       mergeMap( data => this.dataService.searchCocktails(data))
   ).subscribe(
       (data: Array<Cocktail>) => {
-          this.cocktails = data;
+        if(this.checked){
+          this.cocktails = data.filter(cocktail => cocktail.strAlcoholic=='Alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
+        }else{
+          this.cocktails = data.filter(cocktail => cocktail.strAlcoholic=='Non alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
+        }
       }
   )
 }
 onChange(checked: boolean) {
-  console.log(checked);
-  if(this.checked){
-    this.cocktails = this.cocktails.filter(p => p.strAlcoholic=='Alcoholic' || p.strAlcoholic=='Optional alcohol');
-  }else{
-    this.cocktails = this.cocktails.filter(p => p.strAlcoholic=='Non alcoholic' || p.strAlcoholic=='Optional alcohol');
+  console.log(checked)
+  this.checked=checked;
+  if(checked==false){
+    this.alclabel='Without alcohol'
   }
-
+  if(checked==true)
+  this.alclabel='With alcohol'
         }
       }

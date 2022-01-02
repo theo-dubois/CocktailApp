@@ -12,19 +12,18 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getCocktailsAlc(): Observable<Array<Cocktail>> {
-    return this.http.get<Array<Cocktail>>('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic')
-      .pipe(
-        map( (data: any) => data.drinks )
-      );
-}
+  searchCocktailsWith(query: string): Observable<Array<Cocktail>> {
+    return this.http.get<Array<Cocktail>>('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + query)
+    .pipe(
+        map( (data: any) =>data.drinks.filter() ));
+  }
   getCocktail(id :any): Observable<Cocktail> {
      return this.http.get<Cocktail>('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='+id)
       .pipe(
       map( (data: any) => data.drinks[0] )
     );
 }
-searchCocktails(query: string): Observable<Array<Cocktail>> {
+searchCocktails(query: any): Observable<Array<Cocktail>> {
   return this.http.get<Array<Cocktail>>('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + query)
   .pipe(
       map( (data: any) =>data.drinks ));

@@ -1,15 +1,19 @@
-div {
+html {
     font-family: 'Open Sans', sans-serif;
 }
+
 .footer {
     background-color: #242424;
     color: white;
+    width: 100%;
 }
- .footerelement {
-     padding-top: 20px;
- }
- .sousfooter{
+
+.footerelement {
+    padding-top: 20px;
+}
+
+.sousfooter {
     background-color: #1a1a1a;
     color: white;
     padding: 1%;
- }
+}
