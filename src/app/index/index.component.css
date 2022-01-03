@@ -28,10 +28,12 @@ a {
     text-decoration: none;
     color: #686868;
 }
-
+.alhpabet a{
+    color: rgb(109, 109, 109);
+}
 .alhpabet a:hover{
     cursor: pointer;
-    text-decoration: underline;
+    color: black;
 }
 .filtres{
     color: rgb(34, 34, 34);

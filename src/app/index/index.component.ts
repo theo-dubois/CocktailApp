@@ -57,9 +57,11 @@ this.searchControl.valueChanges.pipe(
   mergeMap( data => this.dataService.searchCocktails(data))
 ).subscribe(
   (data: Array<Cocktail>) => {
+    if (data.length > 0) {
       this.cocktails = data;
       this.cocktailswith = data.filter(cocktail => cocktail.strAlcoholic=='Alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
       this.cocktailswithout = data.filter(cocktail => cocktail.strAlcoholic=='Non alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
+    }
   }
 )
   }
