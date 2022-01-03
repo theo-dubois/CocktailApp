@@ -11,7 +11,7 @@ import { DataService } from '../services/data.service';
   templateUrl: './cocktail-list.component.html',
   styleUrls: ['./cocktail-list.component.css']
 })
-export class CocktailListComponent implements OnInit, OnDestroy {
+export class CocktailListComponent implements OnInit,OnDestroy {
 
   @Input() letter!:string;
   public checked: boolean=true;
@@ -51,7 +51,7 @@ export class CocktailListComponent implements OnInit, OnDestroy {
   )
 }
 ngOnDestroy(): void {
- // this.subscription.unsubscribe();
+  //this.subscription.unsubscribe();
 }
 onChange(checked: boolean) {
   this.checked=checked;
@@ -70,9 +70,6 @@ onChange2(checked2: boolean) {
   if(checked2==true){
     this.filterlabel='Hide filters';
   }
-}
-open(letter:string):void{
-  this.router.navigate(['/index/', letter]);
 }
   }
 

@@ -35,10 +35,11 @@ export class IndexComponent implements OnInit,OnDestroy{
   );
   }
   ngOnDestroy(): void {
-   // this.subscription.unsubscribe();
+    this.subscription.unsubscribe();
   }
   open(letter:string):void{
     this.router.navigate(['/index/', letter]);
+
                 }
 
 }
