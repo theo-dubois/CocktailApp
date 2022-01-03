@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { debounceTime, mergeMap } from 'rxjs/operators';
 import { Cocktail } from '../classes/cocktail';
@@ -10,17 +11,20 @@ import { DataService } from '../services/data.service';
   templateUrl: './cocktail-list.component.html',
   styleUrls: ['./cocktail-list.component.css']
 })
-export class CocktailListComponent implements OnInit {
+export class CocktailListComponent implements OnInit, OnDestroy {
 
-  public checked: boolean=false;
-  cocktails!: Array<Cocktail>;
+  @Input() letter!:string;
+  public checked: boolean=true;
+  public checked1: boolean=false;
+  @Input() cocktails!: Array<Cocktail>;
   cocktailsFiltered!: Array<Cocktail>;
   subscription! : Subscription;
   searchForm!: FormGroup;
   searchControl!: FormControl;
   alclabel!: string;
+  filterlabel!: string;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService,private router: Router) { }
 
   ngOnInit(): void {
     if(this.checked){
@@ -28,21 +32,11 @@ export class CocktailListComponent implements OnInit {
     }else{
       this.alclabel ='Without alcohol'
     }
-    console.log(this.checked);
+      this.filterlabel ='Show filters';
     this.searchControl = new FormControl('');
       this.searchForm = new FormGroup({
           search: this.searchControl
       });
-
-    this.subscription = this.dataService.searchCocktails('B').subscribe(
-
-        (data: any) =>
-            {
-              console.log(data);
-                this.cocktails = data;
-            }
-
-    );
     this.searchControl.valueChanges.pipe(
       debounceTime(100),
       mergeMap( data => this.dataService.searchCocktails(data))
@@ -56,13 +50,29 @@ export class CocktailListComponent implements OnInit {
       }
   )
 }
+ngOnDestroy(): void {
+  this.subscription.unsubscribe();
+}
 onChange(checked: boolean) {
-  console.log(checked)
   this.checked=checked;
   if(checked==false){
-    this.alclabel='Without alcohol'
+    this.alclabel='Without alcohol';
   }
-  if(checked==true)
-  this.alclabel='With alcohol'
-        }
-      }
+  if(checked==true){
+    this.alclabel='With alcohol';
+  }
+}
+onChange2(checked2: boolean) {
+  this.checked1=checked2;
+  if(checked2==false){
+    this.filterlabel='Show filters';
+  }
+  if(checked2==true){
+    this.filterlabel='Hide filters';
+  }
+}
+open(letter:string):void{
+  this.router.navigate(['/index/', letter]);
+}
+  }
+

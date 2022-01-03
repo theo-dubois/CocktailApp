@@ -9,6 +9,7 @@ import { RandompageComponent } from './randompage/randompage.component';
 
 const routes: Routes = [
     { path: '', component: IndexComponent },
+    { path: 'index/:letter', component: IndexComponent },
     { path: 'cocktail/:id', component: CocktailPageComponent },
     { path: 'random', component: RandompageComponent },
     { path: 'ingredient/:id', component: IngredientPageComponent }

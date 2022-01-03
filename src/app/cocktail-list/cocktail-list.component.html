@@ -6,16 +6,16 @@
         </div>
         <div class="filtre d-flex justify-content-center">
             <div class="form-check form-switch">
-                <label class="form-check-label" for="flexSwitchCheckChecked">Show filters</label>
-                <input class="form-check-input pull-right" type="checkbox" #checkbox (change)="onChange(checkbox.checked)" id="flexSwitchCheckChecked" >
+                <label class="form-check-label" for="flexSwitchCheckChecked1">{{ filterlabel}}</label>
+                <input class="form-check-input pull-right" type="checkbox" #checkbox1 (change)="onChange2(checkbox1.checked)" id="flexSwitchCheckChecked1">
             </div>
         </div>
     </form>
-    <div  class="filtre d-flex justify-content-center" *ngIf="checked==true">
+    <div class="filtre d-flex justify-content-center" *ngIf="checked1==true">
         <div class="form-check form-switch">
-        <label class="form-check-label" for="flexSwitchCheckChecked1">{{ alclabel }}</label>
-        <input class="form-check-input pull-right" #checkbox (change)="onChange(checkbox.checked)" id="flexSwitchCheckChecked1" type="checkbox" checked></div></div>
-    
+            <label class="form-check-label" for="flexSwitchCheckChecked">{{ alclabel }}</label>
+            <input class="form-check-input pull-right" #checkbox (change)="onChange(checkbox.checked)" id="flexSwitchCheckChecked" type="checkbox" checked></div>
+    </div>
 
     <a routerlink="/random" href="/random" class="">
         No idea? Find a random cocktail !  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-2" viewBox="0 0 16 16">
@@ -28,12 +28,9 @@
 <br>
 <div class="container" style="">
     <div class="card-group justify-content-center" *ngIf="cocktails !== null">
-
         <div class="" *ngFor="let cocktail of cocktails">
             <app-cocktail [cocktail]='cocktail'></app-cocktail>
         </div>
-
-
     </div>
 </div>
 

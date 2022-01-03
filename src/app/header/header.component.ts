@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +10,13 @@ export class HeaderComponent implements OnInit {
 
   myLogo!: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.myLogo = 'assets/images/cocktailicone.png';
+  }
+  open(letter:string):void{
+    this.router.navigate(['/index/',letter]);
   }
 
 }
