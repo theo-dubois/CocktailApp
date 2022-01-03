@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
     this.myLogo = 'assets/images/cocktailicone.png';
   }
   open(letter:string):void{
-    this.router.navigate(['/index/',letter]);
+    this.router.navigate(['']);
   }
 
 }

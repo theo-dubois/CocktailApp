@@ -14,17 +14,25 @@ export class IndexComponent implements OnInit,OnDestroy{
   cocktails!: Array<Cocktail>;
   subscription! : Subscription;
   public letter!:string;
-  constructor(private dataService: DataService,private route: ActivatedRoute,private router: Router) {this.route.params.subscribe( params => console.log(params) );}
+  constructor(private dataService: DataService,private router: Router) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(paramsId => {
-      this.letter = paramsId.letter;
-      if(this.letter==null){
-        this.letter='A';
-      }
-      console.log(this.letter);
-    });
+
+    this.letter='A';
     this.subscription = this.dataService.searchCocktails(this.letter).subscribe(
+      (data: any) =>
+          {
+            console.log(data);
+              this.cocktails = data;
+          }
+  );
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+  open(letter:string):void{
+    //this.router.navigate(['/index/', letter]);
+    this.subscription = this.dataService.searchCocktails(letter).subscribe(
 
       (data: any) =>
           {
@@ -33,12 +41,6 @@ export class IndexComponent implements OnInit,OnDestroy{
           }
 
   );
-  }
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
-  open(letter:string):void{
-    this.router.navigate(['/index/', letter]);
 
                 }
 
