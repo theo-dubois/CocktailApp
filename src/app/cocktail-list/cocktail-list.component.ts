@@ -27,31 +27,9 @@ export class CocktailListComponent implements OnInit,OnDestroy {
   constructor(private dataService: DataService,private router: Router) { }
 
   ngOnInit(): void {
-    if(this.checked){
-      this.alclabel ='With alcohol'
-    }else{
-      this.alclabel ='Without alcohol'
-    }
-      this.filterlabel ='Show filters';
-    this.searchControl = new FormControl('');
-      this.searchForm = new FormGroup({
-          search: this.searchControl
-      });
-    this.searchControl.valueChanges.pipe(
-      debounceTime(100),
-      mergeMap( data => this.dataService.searchCocktails(data))
-  ).subscribe(
-      (data: Array<Cocktail>) => {
-        if(this.checked){
-          this.cocktails = data.filter(cocktail => cocktail.strAlcoholic=='Alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
-        }else{
-          this.cocktails = data.filter(cocktail => cocktail.strAlcoholic=='Non alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
-        }
-      }
-  )
-}
+  }
 ngOnDestroy(): void {
-  this.subscription.unsubscribe();
+ // this.subscription.unsubscribe();
 }
 onChange(checked: boolean) {
   this.checked=checked;

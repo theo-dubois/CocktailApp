@@ -1,36 +1,36 @@
-<a (click)="open(cocktail.idDrink)">
-        <div class=" m-2 card" style="width: 16rem;">
+<a routerLink="/cocktail/{{cocktail.idDrink}}">
+    <div class=" m-2 card" style="width: 16rem;">
 
-            <div class="photo">
-                <img class="card-img grayimage" [src]="cocktail.strDrinkThumb" alt="Card image cap">
-            </div>
-
-            <div class="card-body text-center">
-                <h3 class="card-title center">{{ cocktail.strDrink | uppercase }}</h3>
-                <p class="card-text">{{ cocktail.strCategory }}</p>
-                <div class="label label-danger">{{ cocktail.strAlcoholic }}</div>
-                <br>
-                <h6>
-                    <ng-container *ngIf="cocktail.strIngredient1 !== null">
-                        <a class="ingr" (click)="open2(cocktail.strIngredient1)"> {{ cocktail.strIngredient1 }}</a>
-                    </ng-container>
-                    <ng-container *ngIf="cocktail.strIngredient2 !== null">
-                        <a class="ingr" (click)="open2(cocktail.strIngredient2)">, {{ cocktail.strIngredient2 }}</a>
-                    </ng-container>
-                    <ng-container *ngIf="cocktail.strIngredient3 !== null">
-                        <a class="ingr" (click)="open2(cocktail.strIngredient3)">, {{ cocktail.strIngredient3 }}</a>
-                    </ng-container>
-                    <ng-container *ngIf="cocktail.strIngredient4 !== null">
-                        <a class="ingr" (click)="open2(cocktail.strIngredient4)">, {{ cocktail.strIngredient4 }}</a>
-                    </ng-container>
-                    <ng-container *ngIf="cocktail.strIngredient5 !== null">
-                        <a class="ingr" (click)="open2(cocktail.strIngredient5)"> , {{ cocktail.strIngredient5 }}</a>
-                    </ng-container>
-                    <ng-container *ngIf="cocktail.strIngredient6 !== null">
-                        <a class="ingr" (click)="open2(cocktail.strIngredient6)"> , {{ cocktail.strIngredient6 }}</a>
-                    </ng-container>
-                </h6>
-            </div>
+        <div class="photo">
+            <img class="card-img grayimage" [src]="cocktail.strDrinkThumb" alt="Card image cap">
         </div>
-    </a>
-    <br>
+
+        <div class="card-body text-center">
+            <h3 class="card-title center">{{ cocktail.strDrink | uppercase }}</h3>
+            <p class="card-text">{{ cocktail.strCategory }}</p>
+            <div class="label label-danger">{{ cocktail.strAlcoholic }}</div>
+            <br>
+            <h6>
+                <ng-container *ngIf="cocktail.strIngredient1 !== null">
+                    <a class="ingr" routerLink="/ingredient/{{cocktail.strIngredient1}}"> {{ cocktail.strIngredient1 }}</a>
+                </ng-container>
+                <ng-container *ngIf="cocktail.strIngredient2 !== null">
+                    <a class="ingr" routerLink="/ingredient/{{cocktail.strIngredient2}}">, {{ cocktail.strIngredient2 }}</a>
+                </ng-container>
+                <ng-container *ngIf="cocktail.strIngredient3 !== null">
+                    <a class="ingr" routerLink="/ingredient/{{cocktail.strIngredient3}}">, {{ cocktail.strIngredient3 }}</a>
+                </ng-container>
+                <ng-container *ngIf="cocktail.strIngredient4 !== null">
+                    <a class="ingr" routerLink="/ingredient/{{cocktail.strIngredient4}}">, {{ cocktail.strIngredient4 }}</a>
+                </ng-container>
+                <ng-container *ngIf="cocktail.strIngredient5 !== null">
+                    <a class="ingr" routerLink="/ingredient/{{cocktail.strIngredient5}}"> , {{ cocktail.strIngredient5 }}</a>
+                </ng-container>
+                <ng-container *ngIf="cocktail.strIngredient6 !== null">
+                    <a class="ingr" routerLink="/ingredient/{{cocktail.strIngredient6}}"> , {{ cocktail.strIngredient6 }}</a>
+                </ng-container>
+            </h6>
+        </div>
+    </div>
+</a>
+<br>
