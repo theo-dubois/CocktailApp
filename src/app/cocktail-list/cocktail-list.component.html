@@ -6,11 +6,17 @@
         </div>
         <div class="filtre d-flex justify-content-center">
             <div class="form-check form-switch">
-                <label class="form-check-label" for="flexSwitchCheckChecked">{{ alclabel }}</label>
-                <input class="form-check-input pull-right" type="checkbox" #checkbox (change)="onChange(checkbox.checked)" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked">Show filters</label>
+                <input class="form-check-input pull-right" type="checkbox" #checkbox (change)="onChange(checkbox.checked)" id="flexSwitchCheckChecked" >
             </div>
         </div>
     </form>
+    <div  class="filtre d-flex justify-content-center" *ngIf="checked==false">
+        <div class="form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckChecked1">{{ alclabel }}</label>
+        <input class="form-check-input pull-right" #checkbox2 (change)="onChange(checkbox2.checked)" id="flexSwitchCheckChecked1" type="checkbox" checked></div></div>
+    
+
     <a routerlink="/random" href="/random" class="">
         No idea? Find a random cocktail !  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-2" viewBox="0 0 16 16">
             <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
