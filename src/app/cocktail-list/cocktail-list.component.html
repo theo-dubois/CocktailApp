@@ -11,10 +11,10 @@
             </div>
         </div>
     </form>
-    <div  class="filtre d-flex justify-content-center" *ngIf="checked==false">
+    <div  class="filtre d-flex justify-content-center" *ngIf="checked==true">
         <div class="form-check form-switch">
         <label class="form-check-label" for="flexSwitchCheckChecked1">{{ alclabel }}</label>
-        <input class="form-check-input pull-right" #checkbox2 (change)="onChange(checkbox2.checked)" id="flexSwitchCheckChecked1" type="checkbox" checked></div></div>
+        <input class="form-check-input pull-right" #checkbox (change)="onChange(checkbox.checked)" id="flexSwitchCheckChecked1" type="checkbox" checked></div></div>
     
 
     <a routerlink="/random" href="/random" class="">

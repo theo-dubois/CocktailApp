@@ -12,7 +12,7 @@ import { DataService } from '../services/data.service';
 })
 export class CocktailListComponent implements OnInit {
 
-  public checked: boolean=true;
+  public checked: boolean=false;
   cocktails!: Array<Cocktail>;
   cocktailsFiltered!: Array<Cocktail>;
   subscription! : Subscription;
