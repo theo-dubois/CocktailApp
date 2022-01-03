@@ -17,3 +17,10 @@ html {
     color: white;
     padding: 1%;
 }
+p{
+    font-size: small;
+}
+a{
+    text-decoration: none;
+    color: rgb(241, 241, 241);
+}

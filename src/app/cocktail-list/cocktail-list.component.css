@@ -7,10 +7,10 @@
     width: 40%;
     padding: 5px;
     background-color: #f0f0f0;
-    color: black;
+    color: rgb(34, 34, 34);
     border-style: solid;
-    border-width: 2px;
-    border-color: #303030;
+    border-width: 1px;
+    border-color: #4e4e4e;
     text-align: center;
 }
 
@@ -22,6 +22,13 @@
 .filtre {
     color: #303030;
     margin: 10px;
+}
+a{
+    text-decoration: none;
+    color: #686868;
+}
+a:hover{
+    text-decoration: underline;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {

@@ -34,7 +34,7 @@ export class CocktailListComponent implements OnInit {
           search: this.searchControl
       });
 
-    this.subscription = this.dataService.searchCocktails('').subscribe(
+    this.subscription = this.dataService.searchCocktails('B').subscribe(
 
         (data: any) =>
             {
