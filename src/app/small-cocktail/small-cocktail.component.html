@@ -1,0 +1,12 @@
+<a (click)="open(cocktail.idDrink)">
+    <div class=" m-2 card" style="width: 11rem;">
+
+        <div class="photo">
+            <img class="card-img grayimage" [src]="cocktail.strDrinkThumb" alt="Card image cap">
+        </div>
+
+        <div class="card-body text-center">
+            <h4 class="card-title center m-2">{{ cocktail.strDrink}}</h4>
+        </div>
+    </div>
+</a>

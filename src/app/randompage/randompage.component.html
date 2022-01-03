@@ -1,1 +1,4 @@
-<p>randompage works!</p>
+<div *ngIf="cocktail !== null" class="container justify-content-center">
+    <app-cocktail-infos [cocktail]='cocktail'></app-cocktail-infos>
+    <br>
+</div>

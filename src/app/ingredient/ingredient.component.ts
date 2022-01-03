@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ingredient',
@@ -9,9 +10,13 @@ export class IngredientComponent implements OnInit {
   @Input() Ingredient!:string;
   @Input() Measure!:string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    
+  }
+  open(id:any):void{
+    this.router.navigate(['/ingredient/', id]);
   }
 
 }

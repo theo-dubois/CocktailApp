@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Cocktail } from '../classes/cocktail';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-randompage',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RandompageComponent implements OnInit {
 
-  constructor() { }
+  cocktail!:Cocktail;
+  subscription !:Subscription;
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.subscription = this.dataService.getCocktailRandom().subscribe(
+      (data: any) =>
+          {
+            console.log(data);
+              this.cocktail = data;
+          }
+  );
   }
 
 }

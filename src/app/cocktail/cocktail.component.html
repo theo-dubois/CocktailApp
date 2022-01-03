@@ -1,8 +1,4 @@
-<li>
-    <a (click)="open(cocktail.idDrink)">
-
-
-
+<a (click)="open(cocktail.idDrink)">
         <div class=" m-2 card" style="width: 16rem;">
 
             <div class="photo">
@@ -16,27 +12,25 @@
                 <br>
                 <h6>
                     <ng-container *ngIf="cocktail.strIngredient1 !== null">
-                        {{ cocktail.strIngredient1 }}
+                        <a class="ingr" (click)="open2(cocktail.strIngredient1)"> {{ cocktail.strIngredient1 }}</a>
                     </ng-container>
                     <ng-container *ngIf="cocktail.strIngredient2 !== null">
-                        , {{ cocktail.strIngredient2 }}
+                        <a class="ingr" (click)="open2(cocktail.strIngredient2)">, {{ cocktail.strIngredient2 }}</a>
                     </ng-container>
                     <ng-container *ngIf="cocktail.strIngredient3 !== null">
-                        , {{ cocktail.strIngredient3 }}
+                        <a class="ingr" (click)="open2(cocktail.strIngredient3)">, {{ cocktail.strIngredient3 }}</a>
                     </ng-container>
                     <ng-container *ngIf="cocktail.strIngredient4 !== null">
-                        , {{ cocktail.strIngredient4 }}
+                        <a class="ingr" (click)="open2(cocktail.strIngredient4)">, {{ cocktail.strIngredient4 }}</a>
                     </ng-container>
                     <ng-container *ngIf="cocktail.strIngredient5 !== null">
-                        , {{ cocktail.strIngredient5 }}
+                        <a class="ingr" (click)="open2(cocktail.strIngredient5)"> , {{ cocktail.strIngredient5 }}</a>
                     </ng-container>
                     <ng-container *ngIf="cocktail.strIngredient6 !== null">
-                        , {{ cocktail.strIngredient6 }}
+                        <a class="ingr" (click)="open2(cocktail.strIngredient6)"> , {{ cocktail.strIngredient6 }}</a>
                     </ng-container>
                 </h6>
             </div>
         </div>
     </a>
     <br>
-
-</li>

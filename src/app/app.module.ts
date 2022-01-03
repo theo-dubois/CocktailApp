@@ -22,6 +22,9 @@ import { CocktailInfosComponent } from './cocktail-infos/cocktail-infos.componen
 import { SearchComponent } from './search/search.component';
 import { IngredientComponent } from './ingredient/ingredient.component';
 import { RandompageComponent } from './randompage/randompage.component';
+import { IngredientPageComponent } from './ingredient-page/ingredient-page.component';
+import { IngredientInfosComponent } from './ingredient-infos/ingredient-infos.component';
+import { SmallCocktailComponent } from './small-cocktail/small-cocktail.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { RandompageComponent } from './randompage/randompage.component';
     CocktailInfosComponent,
     SearchComponent,
     IngredientComponent,
-    RandompageComponent
+    RandompageComponent,
+    IngredientPageComponent,
+    IngredientInfosComponent,
+    SmallCocktailComponent
   ],
   imports: [
     BrowserModule,
