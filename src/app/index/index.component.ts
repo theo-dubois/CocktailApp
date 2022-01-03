@@ -32,7 +32,7 @@ export class IndexComponent implements OnInit,OnDestroy{
       this.alclabel ='Without alcohol'
     }
       this.filterlabel ='Show filters';
-    this.letter='A';
+    this.letter='C';
     this.subscription = this.dataService.searchCocktails(this.letter).subscribe(
       (data: any) =>
           {
@@ -75,9 +75,12 @@ onChange(checked: boolean) {
   this.checked=checked;
   if(checked==false){
     this.alclabel='Without alcohol';
+    this.cocktails = this.cocktails.filter(cocktail => cocktail.strAlcoholic=='Non alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
   }
   if(checked==true){
     this.alclabel='With alcohol';
+    this.cocktails = this.cocktails.filter(cocktail => cocktail.strAlcoholic=='Alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
+
   }
 }
 onChange2(checked2: boolean) {

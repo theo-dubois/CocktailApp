@@ -21,7 +21,7 @@
 
 .filtre {
     color: #303030;
-    margin: 10px;
+    margin: 5px;
 }
 
 a {
@@ -29,6 +29,14 @@ a {
     color: #686868;
 }
 
-a:hover {
+.alhpabet a:hover{
+    cursor: pointer;
     text-decoration: underline;
+}
+.filtres{
+    color: rgb(34, 34, 34);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(34, 34, 34);
+    margin: 10px;
 }
