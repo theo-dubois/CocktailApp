@@ -14,14 +14,17 @@ import { DataService } from '../services/data.service';
 export class IndexComponent implements OnInit,OnDestroy{
 
   cocktails!: Array<Cocktail>;
+  cocktailswith!: Array<Cocktail>;
+  cocktailswithout!: Array<Cocktail>;
   subscription! : Subscription;
-  public letter!:string;
+  public letter:string='C';
   searchForm!: FormGroup;
   searchControl!: FormControl;
   public checked: boolean=true;
   public checked1: boolean=false;
   alclabel!: string;
   filterlabel!: string;
+  querry!: string;
 
   constructor(private dataService: DataService,private router: Router) {}
 
@@ -32,12 +35,17 @@ export class IndexComponent implements OnInit,OnDestroy{
       this.alclabel ='Without alcohol'
     }
       this.filterlabel ='Show filters';
-    this.letter='C';
+
     this.subscription = this.dataService.searchCocktails(this.letter).subscribe(
       (data: any) =>
           {
-            console.log(data);
-              this.cocktails = data;
+            this.cocktailswith = data.filter((cocktail: { strAlcoholic: string; }) => cocktail.strAlcoholic=='Alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
+      this.cocktailswithout = data.filter((cocktail: { strAlcoholic: string; }) => cocktail.strAlcoholic=='Non alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
+            if(this.checked==true){
+              this.cocktails = data.filter((cocktail: { strAlcoholic: string; }) => cocktail.strAlcoholic=='Alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
+            }if(this.checked==false){
+              this.cocktails = data.filter((cocktail: { strAlcoholic: string; }) => cocktail.strAlcoholic=='Non alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
+            }
           }
   );
   this.searchControl = new FormControl('');
@@ -49,11 +57,9 @@ this.searchControl.valueChanges.pipe(
   mergeMap( data => this.dataService.searchCocktails(data))
 ).subscribe(
   (data: Array<Cocktail>) => {
-    if(this.checked){
-      this.cocktails = data.filter(cocktail => cocktail.strAlcoholic=='Alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
-    }else{
-      this.cocktails = data.filter(cocktail => cocktail.strAlcoholic=='Non alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
-    }
+      this.cocktails = data;
+      this.cocktailswith = data.filter(cocktail => cocktail.strAlcoholic=='Alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
+      this.cocktailswithout = data.filter(cocktail => cocktail.strAlcoholic=='Non alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
   }
 )
   }
@@ -67,7 +73,13 @@ this.searchControl.valueChanges.pipe(
       (data: any) =>
           {
             console.log(data);
-              this.cocktails = data;
+            this.cocktailswith = data.filter((cocktail: { strAlcoholic: string; }) => cocktail.strAlcoholic=='Alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
+      this.cocktailswithout = data.filter((cocktail: { strAlcoholic: string; }) => cocktail.strAlcoholic=='Non alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
+            if(this.checked==true){
+              this.cocktails = data.filter((cocktail: { strAlcoholic: string; }) => cocktail.strAlcoholic=='Alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
+            }if(this.checked==false){
+              this.cocktails = data.filter((cocktail: { strAlcoholic: string; }) => cocktail.strAlcoholic=='Non alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
+            }
           }
   );
 }
@@ -75,12 +87,11 @@ onChange(checked: boolean) {
   this.checked=checked;
   if(checked==false){
     this.alclabel='Without alcohol';
-    this.cocktails = this.cocktails.filter(cocktail => cocktail.strAlcoholic=='Non alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
+    this.cocktails = this.cocktailswithout;
   }
   if(checked==true){
     this.alclabel='With alcohol';
-    this.cocktails = this.cocktails.filter(cocktail => cocktail.strAlcoholic=='Alcoholic' || cocktail.strAlcoholic=='Optional alcohol');
-
+    this.cocktails = this.cocktailswith;
   }
 }
 onChange2(checked2: boolean) {

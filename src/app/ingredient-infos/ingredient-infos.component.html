@@ -8,9 +8,8 @@
             <img style="width: 15rem;" src="https://www.thecocktaildb.com/images/ingredients/{{ingredient.strIngredient}}-Medium.png" alt="Card image cap">
          </div>
         </div>
-      <div class="col">
+      <div *ngIf="ingredient.strDescription!==null" class="col">
           <p><em>{{ingredient.strDescription}}</em></p>
-          <h1 *ngIf="ingredient.strDescription==null">No description Found</h1>
       </div>
       </div>
 </div>
