@@ -1,8 +1,8 @@
 <div class="container justify-content-center">
     <div class="text-center">
         <h3>
-            <ng-container *ngFor="let letter of letters; let index = index">
-                <a  [routerLink]="'/index/' + letter">{{ letter }}</a>{{ index < 25 ? " / " : "" }}
+            <ng-container *ngFor="let letter of letters$ | async; let index = index">
+                <a [routerLink]="'/index/' + letter">{{ letter }}</a>{{ index < 25 ? " / " : "" }}
             </ng-container>
         </h3>
     </div>
