@@ -17,10 +17,27 @@ html {
     color: white;
     padding: 1%;
 }
-p{
+
+p {
     font-size: small;
 }
-a{
+
+a {
     text-decoration: none;
     color: rgb(241, 241, 241);
+}
+
+.rr {
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* Styles pour cette Media Queries */
+    .rr {
+        flex-direction: column;
+    }
+    .col {
+        display: none;
+    }
 }

@@ -14,6 +14,8 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
     this.myLogoBlanc = 'assets/images/cocktailiconeblanc.png';
   }
-
+  open(url:string): void{
+    window.location.href = url;
+  }
 }
 

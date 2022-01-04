@@ -1,16 +1,10 @@
 <br>
-<div class="">
-    <div class="text-center banner justify-content-center">
-        <div class="">
-            <img class="imagee" [src]=cocktail.strDrinkThumb alt="Card image cap">
-        </div>
-    </div>
-</div>
+
 
 <br><br><br>
 
 <div class="row">
-    <div class="col col-lg-4 text-center justify-content-center ">
+    <div class="col col-lg-4 text-center container justify-content-center ">
         <h3>Ingredients</h3>
         <br><br>
         <div class="card-group">
@@ -59,9 +53,15 @@
     </div>
 </div>
 <br><br>
-
-<div class="hero-text">
-    <h1 class="card-title center">How to make the drink "{{ cocktail.strDrink | uppercase }}"</h1>
-    <span class="tag ">{{ cocktail.strCategory | uppercase }}</span>
-    <span class="tag ">{{ cocktail.strAlcoholic | uppercase }}</span>
-</div>
+<a routerLink="">
+    <div class="hero-text">
+        <div class="col-md-auto">
+            <img [src]="myLogoBlanc" width="450rem" />
+        </div>
+        <br>
+        <p class="card-title">How to make the drink "{{ cocktail.strDrink | uppercase }}"</p>
+        <br>
+        <span class="tag ">{{ cocktail.strCategory | uppercase }}</span>
+        <span class="tag ">{{ cocktail.strAlcoholic | uppercase }}</span>
+    </div>
+</a>

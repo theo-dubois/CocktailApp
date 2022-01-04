@@ -28,17 +28,26 @@ a {
     text-decoration: none;
     color: #686868;
 }
-.alhpabet a{
+
+.alhpabet a {
     color: rgb(109, 109, 109);
 }
-.alhpabet a:hover{
+
+.alhpabet a:hover {
     cursor: pointer;
     color: black;
 }
-.filtres{
+
+.filtres {
     color: rgb(34, 34, 34);
     border-style: solid;
     border-width: 1px;
     border-color: rgb(34, 34, 34);
     margin: 10px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .inputsearch {
+        width: 70%;
+    }
 }

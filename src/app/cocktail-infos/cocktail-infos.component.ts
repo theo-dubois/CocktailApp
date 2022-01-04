@@ -9,11 +9,12 @@ import { Cocktail } from '../classes/cocktail';
 export class CocktailInfosComponent implements OnInit {
   @Input() cocktail!: Cocktail;
   @Input() id!:string;
+  myLogoBlanc!:string;
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.id);
+    this.myLogoBlanc = 'assets/images/cocktailiconeblanc.png';
 
 }
 

@@ -1,3 +1,14 @@
+<a routerLink="">
+    <div class="">
+        <div class="text-center banner justify-content-center">
+            <div class="">
+
+                <img class="imagee" [src]=cocktail.strDrinkThumb alt="Card image cap">
+
+            </div>
+        </div>
+    </div>
+</a>
 <div *ngIf="cocktail !== null" class="container justify-content-center">
     <app-cocktail-infos [id]="id" [cocktail]='cocktail'></app-cocktail-infos>
     <br>

@@ -1,3 +1,21 @@
 div {
     font-family: 'Open Sans', sans-serif;
 }
+
+.hero-text h1 {
+    color: white;
+    font-family: Open Sans;
+    text-align: center;
+}
+
+.banner {
+    width: 100%;
+}
+
+.imagee {
+    object-fit: cover;
+    height: 370px;
+    width: 100%;
+    filter: grayscale(30%);
+    background-color: #303030;
+}
