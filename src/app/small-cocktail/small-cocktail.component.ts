@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Cocktail } from '../classes/cocktail';
 
 @Component({
@@ -10,12 +9,8 @@ import { Cocktail } from '../classes/cocktail';
 export class SmallCocktailComponent implements OnInit {
   @Input() cocktail!:Cocktail;
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-
-  }
-  open(id:any):void{
-    this.router.navigate(['/cocktail/', id]);
   }
 }

@@ -1,11 +1,10 @@
 <div class="container justify-content-center">
     <div class="text-center">
         <h3>
-            <a (click)="open('A')">A</a> / <a (click)="open('B')">B</a> / <a (click)="open('C')">C</a> / <a (click)="open('D')">D</a> / <a (click)="open('E')">E</a> / <a (click)="open('F')">F</a> / <a (click)="open('G')">G</a> /
-            <a (click)="open('H')">H</a> / <a (click)="open('I')">I</a> / <a (click)="open('J')">J</a> / <a (click)="open('K')">K</a> / <a (click)="open('L')">L</a> / <a (click)="open('M')">M</a> / <a (click)="open('N')">N</a> /
-            <a (click)="open('O')">O</a> /
-            <a (click)="open('P')">P</a> / <a (click)="open('Q')">Q</a> / <a (click)="open('R')">R</a> / <a (click)="open('S')">S</a> / <a (click)="open('T')">T</a> / <a (click)="open('U')">U</a> / <a (click)="open('V')">V</a> /
-            <a (click)="open('W')">W</a> / <a (click)="open('X')">X</a> / <a (click)="open('Y')">Y</a> / <a (click)="open('Z')">Z</a> </h3>
+            <ng-container *ngFor="let letter of letters; let index = index">
+                <a  [routerLink]="'/index/' + letter">{{ letter }}</a>{{ index < 25 ? " / " : "" }}
+            </ng-container>
+        </h3>
     </div>
     <app-cocktail-list [cocktails]='cocktails'></app-cocktail-list>
 </div>

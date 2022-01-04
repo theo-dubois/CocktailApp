@@ -1,67 +1,69 @@
 <br>
-<div class="">
-    <div class="text-center banner justify-content-center">
-        <div class="">
-            <img class="imagee" [src]=cocktail.strDrinkThumb alt="Card image cap">
-        </div>
-    </div>
-</div>
-
-<br><br><br>
-
-<div class="row">
-    <div class="col col-lg-4 text-center justify-content-center ">
-        <h3>Ingredients</h3>
-        <br><br>
-        <div class="card-group">
-            <div class="" *ngIf="cocktail.strIngredient1!==null">
-                <app-ingredient [Ingredient]='cocktail.strIngredient1' [Measure]='cocktail.strMeasure1'>
-                </app-ingredient>
-            </div>
-            <div class="" *ngIf="cocktail.strIngredient2!==null">
-                <app-ingredient [Ingredient]='cocktail.strIngredient2' [Measure]='cocktail.strMeasure2'>
-                </app-ingredient>
-            </div>
-            <div class="" *ngIf="cocktail.strIngredient3!==null">
-                <app-ingredient [Ingredient]='cocktail.strIngredient3' [Measure]='cocktail.strMeasure3'>
-                </app-ingredient>
-            </div>
-            <div class="" *ngIf="cocktail.strIngredient4!==null">
-                <app-ingredient [Ingredient]='cocktail.strIngredient4' [Measure]='cocktail.strMeasure4'>
-                </app-ingredient>
-            </div>
-            <div class="" *ngIf="cocktail.strIngredient5!==null">
-                <app-ingredient [Ingredient]='cocktail.strIngredient5' [Measure]='cocktail.strMeasure5'>
-                </app-ingredient>
-            </div>
-            <div class="" *ngIf="cocktail.strIngredient6!==null">
-                <app-ingredient [Ingredient]='cocktail.strIngredient6' [Measure]='cocktail.strMeasure6'>
-                </app-ingredient>
+<div *ngIf="cocktail">
+    <div class="">
+        <div class="text-center banner justify-content-center">
+            <div class="">
+                <img *ngIf="cocktail.strDrinkThumb!==null" class="imagee" [src]=cocktail.strDrinkThumb alt="Card image cap">
             </div>
         </div>
     </div>
-    <div class="col borderright"></div>
-    <div class="col ">
-        <h3 class="text-center">Preparation</h3>
-        <br>
-        <li class="item">
-            <span class="dot">1</span> Start by taking a {{cocktail.strGlass}}.
-        </li>
-        <br>
-        <li class="item">
-            <span class="dot">2</span> {{cocktail.strInstructions}}
-        </li>
-        <br>
-        <li class="item">
-            <span class="dot">3</span> Degust and appreciate your {{ cocktail.strDrink | uppercase }} (with moderation) !
 
-        </li>
+    <br><br><br>
+
+    <div class="row">
+        <div class="col col-lg-4 text-center justify-content-center ">
+            <h3>Ingredients</h3>
+            <br><br>
+            <div class="card-group">
+                <div class="" *ngIf="cocktail.strIngredient1!==null">
+                    <app-ingredient [Ingredient]='cocktail.strIngredient1' [Measure]='cocktail.strMeasure1'>
+                    </app-ingredient>
+                </div>
+                <div class="" *ngIf="cocktail.strIngredient2!==null">
+                    <app-ingredient [Ingredient]='cocktail.strIngredient2' [Measure]='cocktail.strMeasure2'>
+                    </app-ingredient>
+                </div>
+                <div class="" *ngIf="cocktail.strIngredient3!==null">
+                    <app-ingredient [Ingredient]='cocktail.strIngredient3' [Measure]='cocktail.strMeasure3'>
+                    </app-ingredient>
+                </div>
+                <div class="" *ngIf="cocktail.strIngredient4!==null">
+                    <app-ingredient [Ingredient]='cocktail.strIngredient4' [Measure]='cocktail.strMeasure4'>
+                    </app-ingredient>
+                </div>
+                <div class="" *ngIf="cocktail.strIngredient5!==null">
+                    <app-ingredient [Ingredient]='cocktail.strIngredient5' [Measure]='cocktail.strMeasure5'>
+                    </app-ingredient>
+                </div>
+                <div class="" *ngIf="cocktail.strIngredient6!==null">
+                    <app-ingredient [Ingredient]='cocktail.strIngredient6' [Measure]='cocktail.strMeasure6'>
+                    </app-ingredient>
+                </div>
+            </div>
+        </div>
+        <div class="col borderright"></div>
+        <div class="col ">
+            <h3 class="text-center">Preparation</h3>
+            <br>
+            <li class="item">
+                <span class="dot">1</span> Start by taking a {{cocktail.strGlass}}.
+            </li>
+            <br>
+            <li class="item">
+                <span class="dot">2</span> {{cocktail.strInstructions}}
+            </li>
+            <br>
+            <li class="item">
+                <span class="dot">3</span> Degust and appreciate your {{ cocktail.strDrink | uppercase }} (with moderation) !
+
+            </li>
+        </div>
     </div>
-</div>
-<br><br>
+    <br><br>
 
-<div class="hero-text">
-    <h1 class="card-title center">How to make the drink "{{ cocktail.strDrink | uppercase }}"</h1>
-    <span class="tag ">{{ cocktail.strCategory | uppercase }}</span>
-    <span class="tag ">{{ cocktail.strAlcoholic | uppercase }}</span>
+    <div class="hero-text">
+        <h1 class="card-title center">How to make the drink "{{ cocktail.strDrink | uppercase }}"</h1>
+        <span class="tag ">{{ cocktail.strCategory | uppercase }}</span>
+        <span class="tag ">{{ cocktail.strAlcoholic | uppercase }}</span>
+    </div>
 </div>
