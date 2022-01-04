@@ -13,13 +13,15 @@ export class CocktailInfosComponent implements OnInit {
   myLogoBlanc!:string;
   safeURL!: any;
 
-  constructor(private _sanitizer: DomSanitizer) { 
+  constructor(private sanitizer: DomSanitizer) { 
+    
   }
 
   ngOnInit(): void {
-    this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.cocktail.strVideo)
     this.myLogoBlanc = 'assets/images/cocktailiconeblanc.png';
 
+  }
+  getSafeUrl() {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.cocktail.strVideo);     
 }
-
 }
