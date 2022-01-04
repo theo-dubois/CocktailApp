@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Cocktail } from '../classes/cocktail';
 
 @Component({
@@ -10,10 +11,13 @@ export class CocktailInfosComponent implements OnInit {
   @Input() cocktail!: Cocktail;
   @Input() id!:string;
   myLogoBlanc!:string;
+  safeURL!: any;
 
-  constructor() { }
+  constructor(private _sanitizer: DomSanitizer) { 
+  }
 
   ngOnInit(): void {
+    this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.cocktail.strVideo)
     this.myLogoBlanc = 'assets/images/cocktailiconeblanc.png';
 
 }

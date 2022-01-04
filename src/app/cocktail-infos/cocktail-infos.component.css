@@ -3,6 +3,9 @@
     .borderright {
         display: none;
     }
+    .hero-text p {
+        font-size: 20px;
+    }
 }
 
 .borderright {
@@ -57,10 +60,18 @@ li {
     box-shadow: -3px 3px 10px rgb(65, 65, 65);
 }
 
-.hero-text p {
+.titre {
     color: white;
     text-align: center;
     font-size: 50px;
+    font-family: 'Raleway', serif;
+    text-shadow: 1px 1px 10px rgb(46, 46, 46);
+}
+.date {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
     font-family: 'Raleway', serif;
     text-shadow: 1px 1px 10px rgb(46, 46, 46);
 }

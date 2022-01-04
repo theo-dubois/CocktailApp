@@ -13,9 +13,5 @@ export class SmallCocktailComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-
-  }
-  open(id:any):void{
-    this.router.navigate(['/cocktail/', id]);
   }
 }

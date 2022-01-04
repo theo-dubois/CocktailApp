@@ -20,3 +20,7 @@ div {
     overflow: hidden;
 }
 a:hover{cursor: pointer;}
+a{
+    text-decoration: none;
+    color: #303030;
+}

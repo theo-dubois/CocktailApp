@@ -25,10 +25,14 @@ export class IndexComponent implements OnInit,OnDestroy{
   alclabel!: string;
   filterlabel!: string;
   querry!: string;
+  letters: Array<string> = new Array();
 
-  constructor(private dataService: DataService,private router: Router) {}
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    for(let i=1; i<=26; i++) {
+      this.letters.push(String.fromCharCode(i+64));
+  }
     if(this.checked){
       this.alclabel ='With alcohol'
     }else{
