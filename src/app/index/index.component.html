@@ -34,7 +34,7 @@
     <div class="text-center">
         <h6 class="alhpabet">
             <ng-container *ngFor="let letter of letters; let index = index">
-                <a (click)="open(letter)" [routerLink]="'/index/' + letter">{{ letter }}</a>{{ index < 25 ? " / " : "" }}
+                <a (click)="open(letter)" [routerLink]="'/index/' + letter">{{ letter }}</a>{{ index < 25 ? "  " : "" }}
             </ng-container></h6>
     </div>
     <div class="container justify-content-center">

@@ -1,0 +1,7 @@
+.imagee {
+    object-fit: cover;
+    height: 370px;
+    width: 100%;
+    filter: grayscale(30%);
+    background-color: #303030;
+}

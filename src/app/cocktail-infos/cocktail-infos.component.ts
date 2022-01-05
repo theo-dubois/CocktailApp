@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Cocktail } from '../classes/cocktail';
 
 @Component({
@@ -21,7 +21,9 @@ export class CocktailInfosComponent implements OnInit {
     this.myLogoBlanc = 'assets/images/cocktailiconeblanc.png';
 
   }
-  getSafeUrl() {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(this.cocktail.strVideo);     
+  getSafeUrl() : SafeResourceUrl{
+    var baseurl = this.cocktail.strVideo;
+    var newstr = baseurl.replace("watch?v=","embed/")
+    return this.sanitizer.bypassSecurityTrustResourceUrl(newstr+'?autoplay=1');     
 }
 }
