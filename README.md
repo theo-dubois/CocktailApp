@@ -1,5 +1,7 @@
 # CocktailApp
 
+You can access the preview of this app on this link : https://darkyiss7.github.io/CocktailApp/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.
 We are using the API https://www.thecocktaildb.com/api.php
 Team builder of this project are Theo DUBOIS, Alexandre BEAU and Alice DUBOST
