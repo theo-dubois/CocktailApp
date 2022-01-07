@@ -1,4 +1,4 @@
-# CocktailApp
+# Cocktail Factory
 
 You can access the preview of this app on this link : https://darkyiss7.github.io/CocktailApp/
 
